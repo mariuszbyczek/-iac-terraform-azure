@@ -31,6 +31,6 @@ resource "azurerm_linux_function_app" "example" {
 }
 
 data "azurerm_function_app_function" "example" {
-  name                = "example-function"
+  id                =  local.id
   resource_group_name = azurerm_resource_group.example.name
 }
