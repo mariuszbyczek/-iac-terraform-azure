@@ -62,7 +62,7 @@ variable "name_azurerm_linux_function_app" {
 
 variable "id_azurerm_function_app_function" {
   description = "sku_name_azurerm_service_plan"
-  type = int
-  default = 1234567
+  type = string
+  default = "1234567"
   
 }
