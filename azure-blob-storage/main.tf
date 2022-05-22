@@ -18,6 +18,7 @@ resource "azurerm_storage_container" "example" {
 }
 
 resource "azurerm_storage_blob" "example" {
+  url                    = "www.niewiem.pl"
   name                   = "my-awesome-content.zip"
   storage_account_name   = azurerm_storage_account.example.name
   storage_container_name = azurerm_storage_container.example.name
