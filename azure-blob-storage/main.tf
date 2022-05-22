@@ -24,3 +24,4 @@ resource "azurerm_storage_blob" "this" {
   storage_container_name = azurerm_storage_container.this.name
   type                   = var.type_azurerm_storage_blob
   source                 = var.source_azurerm_storage_blob
+}
