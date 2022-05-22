@@ -1,4 +1,4 @@
 output "blob url" {
 description = " zasób wyświetlający url dla azurem_storage_blob"
-  value = try(azurerm_storage_blob.url)
+  value = azurerm_storage_blob.url
 }
