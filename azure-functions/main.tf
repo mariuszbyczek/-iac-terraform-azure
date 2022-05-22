@@ -1,26 +1,26 @@
 resource "azurerm_resource_group" "this" {
-  name     = "example-resources"
-  location = "West Europe"
+  name     = var.name_resource_group
+  location = var.location_resource_group
 }
 
 resource "azurerm_storage_account" "this" {
-  name                     = "linuxfunctionappsa"
+  name                     = var.name_azurerm_storage_account
   resource_group_name      = azurerm_resource_group.example.name
   location                 = azurerm_resource_group.example.location
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
+  account_tier             = var.account_tier_azurerm_storage_account
+  account_replication_type = var.account_replication_type_azurerm_storage_account
 }
 
 resource "azurerm_service_plan" "this" {
-  name                = "example-app-service-plan"
+  name                = var.name_azurerm_service_plan
   resource_group_name = azurerm_resource_group.example.name
   location            = azurerm_resource_group.example.location
-  os_type             = "Linux"
-  sku_name            = "Y1"
+  sku_name            = var.sku_name_azurerm_service_plan
+  os_type             = var.os_type_azurerm_service_plan
 }
 
 resource "azurerm_linux_function_app" "this" {
-  name                = "example-linux-function-app"
+  name                = var.name_azurerm_linux_function_app
   resource_group_name = azurerm_resource_group.example.name
   location            = azurerm_resource_group.example.location
 
@@ -31,6 +31,6 @@ resource "azurerm_linux_function_app" "this" {
 }
 
 data "azurerm_function_app_function" "this" {
-  id                =  "name 123"
+  id                =  var.id_azurerm_function_app_function
   resource_group_name = azurerm_resource_group.example.name
 }
