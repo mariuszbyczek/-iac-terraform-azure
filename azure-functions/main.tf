@@ -30,7 +30,7 @@ resource "azurerm_linux_function_app" "example" {
   site_config {}
 }
 
-data "azurerm_function_app_host_keys" "example" {
+data "azurerm_function_app_function" "example" {
   name                = "example-function"
   resource_group_name = azurerm_resource_group.example.name
 }
